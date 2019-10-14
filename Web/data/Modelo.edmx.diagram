@@ -5,25 +5,28 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ff734cb67c3f4577b827e0b3ea90ff1f" Name="Diagram1">
-        <EntityTypeShape EntityType="COMANDFASTModel.Calificaciones" Width="1.5" PointX="5.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Estado" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Pedido" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Producto" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Producto" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Usuario" Width="1.5" PointX="1.5" PointY="19.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Usuario" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Estado_Pedido" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Pedido_Producto" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="COMANDFASTModel.Usuario_Pedido" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Estado_Pedido_Estado" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Estado_Pedido_Pedido" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Pedido_Producto_Pedido" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Pedido_Pedido" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Pedido_Producto_Producto" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Producto_Tipo_Producto" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Tipo_Usuario" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK__Usuario_P__Id_Us__24927208" ManuallyRouted="false" />
-        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Pedido_Usuario" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Errores" Width="1.5" PointX="7.75" PointY="5.75" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Estado" Width="1.5" PointX="3" PointY="10.625" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Opiniones" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Pedido" Width="1.5" PointX="3" PointY="7.25" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Producto" Width="1.5" PointX="10" PointY="1.875" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Producto" Width="1.5" PointX="7.75" PointY="2.375" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Usuario" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Usuario" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Estado_Pedido" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Pedido_Producto" Width="1.5" PointX="12.25" PointY="4.75" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Stock_Comanfast" Width="1.5" PointX="12.25" PointY="2.375" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Usuario_Pedido" Width="1.5" PointX="5.25" PointY="2.375" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Estado_Pedido_Estado" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Opiniones_Usuario" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Estado_Pedido_Pedido" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Pedido_Producto_Pedido" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Pedido_Pedido" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Pedido_Producto_Producto" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Producto_Tipo_Producto" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Stock_Comanfast_Producto" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Tipo_Usuario" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Pedido_Usuario" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

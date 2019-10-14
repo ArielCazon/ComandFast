@@ -23,7 +23,7 @@ namespace Web.data
         }
     
         public long Id_Pedido { get; set; }
-        public string Id_Estado_Pedido { get; set; }
+        public int Id_Estado_Pedido { get; set; }
         public double Monto { get; set; }
         public string Descripcion { get; set; }
     

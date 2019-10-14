@@ -15,7 +15,7 @@ namespace Web.data
     public partial class Estado_Pedido
     {
         public long Id_Pedido { get; set; }
-        public string Id_Estado { get; set; }
+        public int Id_Estado { get; set; }
         public System.DateTime Fecha_Hora { get; set; }
     
         public virtual Estado Estado { get; set; }

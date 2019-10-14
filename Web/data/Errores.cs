@@ -12,12 +12,11 @@ namespace Web.data
     using System;
     using System.Collections.Generic;
     
-    public partial class Calificaciones
+    public partial class Errores
     {
-        public long Id_Pedido { get; set; }
-        public string Id_Estado_Pedido { get; set; }
-        public double Monto { get; set; }
+        public long Id_Error { get; set; }
+        public System.DateTime Fecha_Hora { get; set; }
+        public string Proceso { get; set; }
         public string Descripcion { get; set; }
-        public string Id_Producto { get; set; }
     }
 }

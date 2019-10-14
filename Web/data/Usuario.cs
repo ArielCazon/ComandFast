@@ -17,8 +17,8 @@ namespace Web.data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
+            this.Opiniones = new HashSet<Opiniones>();
             this.Usuario_Pedido = new HashSet<Usuario_Pedido>();
-            this.Usuario_Pedido1 = new HashSet<Usuario_Pedido>();
         }
     
         public long Id_Usuario { get; set; }
@@ -27,12 +27,12 @@ namespace Web.data
         public System.DateTime Fecha_Nac { get; set; }
         public string Usuario1 { get; set; }
         public string Pass { get; set; }
-        public string Id_Tipo_Usuario { get; set; }
+        public int Id_Tipo_Usuario { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Opiniones> Opiniones { get; set; }
         public virtual Tipo_Usuario Tipo_Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario_Pedido> Usuario_Pedido { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Usuario_Pedido> Usuario_Pedido1 { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Web.data
             this.Usuario = new HashSet<Usuario>();
         }
     
-        public string Id_Tipo_Usuario { get; set; }
+        public int Id_Tipo_Usuario { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

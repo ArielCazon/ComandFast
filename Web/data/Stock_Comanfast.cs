@@ -12,13 +12,11 @@ namespace Web.data
     using System;
     using System.Collections.Generic;
     
-    public partial class Usuario_Pedido
+    public partial class Stock_Comanfast
     {
-        public long Id_Usuario { get; set; }
-        public long Id_Pedido { get; set; }
-        public System.DateTime Fecha_Hora { get; set; }
+        public int Id_Producto { get; set; }
+        public Nullable<int> Cantidad { get; set; }
     
-        public virtual Pedido Pedido { get; set; }
-        public virtual Usuario Usuario { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

@@ -30,6 +30,7 @@ namespace Web.BOL
             usuarioDTO.FechaNacimiento = fechaNacimiento;
             usuarioDTO.Usuario = usuario;
             usuarioDTO.Password = password;
+            usuarioDTO.TipoUsuario = 1;
             return usuarioDTO;
         }
     }

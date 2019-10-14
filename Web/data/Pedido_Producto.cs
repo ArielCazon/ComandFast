@@ -15,7 +15,7 @@ namespace Web.data
     public partial class Pedido_Producto
     {
         public long Id_Pedido { get; set; }
-        public string Id_Producto { get; set; }
+        public int Id_Producto { get; set; }
         public short Cantidad { get; set; }
     
         public virtual Pedido Pedido { get; set; }

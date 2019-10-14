@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Web.data;
 using Web.DTO;
 using Web.Models;
-using Web.data;
 
 namespace Web.DAL
 {
@@ -20,18 +20,38 @@ namespace Web.DAL
                 Apellido = usuarioDTO.Apellido,
                 Fecha_Nac = usuarioDTO.FechaNacimiento,
                 Nombre = usuarioDTO.Nombre,
-                Id_Tipo_Usuario = usuarioDTO.TipoUsuario.ToString(),
+                Usuario1 = usuarioDTO.Usuario,
+                Id_Tipo_Usuario = usuarioDTO.TipoUsuario,
                 Pass = usuarioDTO.Password
-                };
+            
+                };  
+
 
                 entities.Usuario.Add(usuario);
                 entities.SaveChanges();
 
             }
+            catch (System.Data.Entity.Infrastructure.DbUpdateConcurrencyException ex)
+            {
+                throw ex.InnerException;
+            }
+            catch (System.Data.Entity.Core.EntityCommandCompilationException ex)
+            {
+                throw ex.InnerException;
+            }
+            catch (System.Data.Entity.Core.UpdateException ex)
+            {
+                throw ex.InnerException;
+            }
+
+            catch (System.Data.Entity.Infrastructure.DbUpdateException ex) //DbContext
+            {
+                throw ex.InnerException;
+            }
+
             catch (Exception ex)
             {
-
-                throw;
+                throw ex.InnerException;
             }
         }
     }

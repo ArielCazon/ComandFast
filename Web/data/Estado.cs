@@ -20,7 +20,7 @@ namespace Web.data
             this.Estado_Pedido = new HashSet<Estado_Pedido>();
         }
     
-        public string Id_Estado { get; set; }
+        public int Id_Estado { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

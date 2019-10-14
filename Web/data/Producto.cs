@@ -20,14 +20,15 @@ namespace Web.data
             this.Pedido_Producto = new HashSet<Pedido_Producto>();
         }
     
-        public string Id_Producto { get; set; }
+        public int Id_Producto { get; set; }
         public string Descripcion { get; set; }
         public double Precio { get; set; }
         public string En_Menu { get; set; }
-        public string Id_Tipo_Producto { get; set; }
+        public int Id_Tipo_Producto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido_Producto> Pedido_Producto { get; set; }
         public virtual Tipo_Producto Tipo_Producto { get; set; }
+        public virtual Stock_Comanfast Stock_Comanfast { get; set; }
     }
 }

@@ -25,8 +25,9 @@ namespace Web.data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Calificaciones> Calificaciones { get; set; }
+        public virtual DbSet<Errores> Errores { get; set; }
         public virtual DbSet<Estado> Estado { get; set; }
+        public virtual DbSet<Opiniones> Opiniones { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<Tipo_Producto> Tipo_Producto { get; set; }
@@ -34,6 +35,7 @@ namespace Web.data
         public virtual DbSet<Usuario> Usuario { get; set; }
         public virtual DbSet<Estado_Pedido> Estado_Pedido { get; set; }
         public virtual DbSet<Pedido_Producto> Pedido_Producto { get; set; }
+        public virtual DbSet<Stock_Comanfast> Stock_Comanfast { get; set; }
         public virtual DbSet<Usuario_Pedido> Usuario_Pedido { get; set; }
     }
 }
