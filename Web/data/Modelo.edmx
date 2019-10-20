@@ -72,6 +72,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Pedido_Producto' does not have a pr
           <Property Name="Precio" Type="float" Nullable="false" />
           <Property Name="En_Menu" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="Id_Tipo_Producto" Type="int" Nullable="false" />
+          <Property Name="Stock" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'COMANDFAST.dbo.Stock_Comanfast' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -81,6 +82,16 @@ warning 6002: The table/view 'COMANDFAST.dbo.Stock_Comanfast' does not have a pr
           </Key>
           <Property Name="Id_Producto" Type="int" Nullable="false" />
           <Property Name="Cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Tipo_Producto">
           <Key>
@@ -104,7 +115,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Stock_Comanfast' does not have a pr
           <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Apellido" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Fecha_Nac" Type="date" Nullable="false" />
-          <Property Name="Usuario" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Login_Usuario" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Pass" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Id_Tipo_Usuario" Type="int" Nullable="false" />
         </EntityType>
@@ -246,6 +257,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
           <EntitySet Name="Opiniones" EntityType="Self.Opiniones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Producto" EntityType="Self.Tipo_Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tipo_Usuario" EntityType="Self.Tipo_Usuario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
@@ -327,6 +339,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
           <EntitySet Name="Opiniones" EntityType="COMANDFASTModel.Opiniones" />
           <EntitySet Name="Pedido" EntityType="COMANDFASTModel.Pedido" />
           <EntitySet Name="Producto" EntityType="COMANDFASTModel.Producto" />
+          <EntitySet Name="sysdiagrams" EntityType="COMANDFASTModel.sysdiagrams" />
           <EntitySet Name="Tipo_Producto" EntityType="COMANDFASTModel.Tipo_Producto" />
           <EntitySet Name="Tipo_Usuario" EntityType="COMANDFASTModel.Tipo_Usuario" />
           <EntitySet Name="Usuario" EntityType="COMANDFASTModel.Usuario" />
@@ -423,9 +436,20 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
           <Property Name="Precio" Type="Double" Nullable="false" />
           <Property Name="En_Menu" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Id_Tipo_Producto" Type="Int32" Nullable="false" />
+          <Property Name="Stock" Type="Int32" />
           <NavigationProperty Name="Pedido_Producto" Relationship="COMANDFASTModel.FK_Pedido_Producto_Producto" FromRole="Producto" ToRole="Pedido_Producto" />
           <NavigationProperty Name="Tipo_Producto" Relationship="COMANDFASTModel.FK_Producto_Tipo_Producto" FromRole="Producto" ToRole="Tipo_Producto" />
           <NavigationProperty Name="Stock_Comanfast" Relationship="COMANDFASTModel.FK_Stock_Comanfast_Producto" FromRole="Producto" ToRole="Stock_Comanfast" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Tipo_Producto">
           <Key>
@@ -451,7 +475,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Fecha_Nac" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Usuario1" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Login_Usuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Pass" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Id_Tipo_Usuario" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Opiniones" Relationship="COMANDFASTModel.FK_Opiniones_Usuario" FromRole="Usuario" ToRole="Opiniones" />
@@ -588,7 +612,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
         </Association>
         <Association Name="FK_Stock_Comanfast_Producto">
           <End Type="COMANDFASTModel.Producto" Role="Producto" Multiplicity="1" />
-          <End Type="COMANDFASTModel.Stock_Comanfast" Role="Stock_Comanfast" Multiplicity="1" />
+          <End Type="COMANDFASTModel.Stock_Comanfast" Role="Stock_Comanfast" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Producto">
               <PropertyRef Name="Id_Producto" />
@@ -622,7 +646,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -669,11 +693,23 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
           <EntitySetMapping Name="Producto">
             <EntityTypeMapping TypeName="COMANDFASTModel.Producto">
               <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Stock" ColumnName="Stock" />
                 <ScalarProperty Name="Id_Tipo_Producto" ColumnName="Id_Tipo_Producto" />
                 <ScalarProperty Name="En_Menu" ColumnName="En_Menu" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="COMANDFASTModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -698,7 +734,7 @@ warning 6002: The table/view 'COMANDFAST.dbo.Usuario_Pedido' does not have a pri
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="Id_Tipo_Usuario" ColumnName="Id_Tipo_Usuario" />
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
-                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+                <ScalarProperty Name="Login_Usuario" ColumnName="Login_Usuario" />
                 <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />

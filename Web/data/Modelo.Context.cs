@@ -30,6 +30,7 @@ namespace Web.data
         public virtual DbSet<Opiniones> Opiniones { get; set; }
         public virtual DbSet<Pedido> Pedido { get; set; }
         public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tipo_Producto> Tipo_Producto { get; set; }
         public virtual DbSet<Tipo_Usuario> Tipo_Usuario { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }

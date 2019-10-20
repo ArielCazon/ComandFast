@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="COMANDFASTModel.Opiniones" Width="1.5" PointX="5.25" PointY="5.125" />
         <EntityTypeShape EntityType="COMANDFASTModel.Pedido" Width="1.5" PointX="3" PointY="7.25" />
         <EntityTypeShape EntityType="COMANDFASTModel.Producto" Width="1.5" PointX="10" PointY="1.875" />
+        <EntityTypeShape EntityType="COMANDFASTModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="8.75" />
         <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Producto" Width="1.5" PointX="7.75" PointY="2.375" />
         <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Usuario" Width="1.5" PointX="0.75" PointY="2.625" />
         <EntityTypeShape EntityType="COMANDFASTModel.Usuario" Width="1.5" PointX="3" PointY="2" />

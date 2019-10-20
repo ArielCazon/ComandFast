@@ -25,7 +25,7 @@ namespace Web.data
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public System.DateTime Fecha_Nac { get; set; }
-        public string Usuario1 { get; set; }
+        public string Login_Usuario { get; set; }
         public string Pass { get; set; }
         public int Id_Tipo_Usuario { get; set; }
     

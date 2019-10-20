@@ -396,6 +396,9 @@
     <Compile Include="data\Stock_Comanfast.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="data\sysdiagrams.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="data\Tipo_Producto.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -416,6 +419,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="DTO\UsuarioDTO.cs" />
+    <Compile Include="Enum\TipoUsuarioEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

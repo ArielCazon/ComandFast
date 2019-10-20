@@ -20,10 +20,9 @@ namespace Web.DAL
                 Apellido = usuarioDTO.Apellido,
                 Fecha_Nac = usuarioDTO.FechaNacimiento,
                 Nombre = usuarioDTO.Nombre,
-                Usuario1 = usuarioDTO.Usuario,
+                Login_Usuario = usuarioDTO.Usuario,
                 Id_Tipo_Usuario = usuarioDTO.TipoUsuario,
                 Pass = usuarioDTO.Password
-            
                 };  
 
 

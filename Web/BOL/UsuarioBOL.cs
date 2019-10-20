@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Web.DTO;
 using Web.DAL;
+using Web.Enum;
 
 namespace Web.BOL
 {
@@ -30,7 +31,7 @@ namespace Web.BOL
             usuarioDTO.FechaNacimiento = fechaNacimiento;
             usuarioDTO.Usuario = usuario;
             usuarioDTO.Password = password;
-            usuarioDTO.TipoUsuario = 1;
+            usuarioDTO.TipoUsuario = (int)TipoUsuarioEnum.Cliente;
             return usuarioDTO;
         }
     }

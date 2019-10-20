@@ -25,6 +25,7 @@ namespace Web.data
         public double Precio { get; set; }
         public string En_Menu { get; set; }
         public int Id_Tipo_Producto { get; set; }
+        public Nullable<int> Stock { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido_Producto> Pedido_Producto { get; set; }
