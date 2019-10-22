@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6779b89b2d5440b1aeafa3122271edc5" Name="Diagram1">
+        <EntityTypeShape EntityType="COMANDFASTModel.Errores" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Estado" Width="1.5" PointX="6" PointY="11.625" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Opiniones" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Pedido" Width="1.5" PointX="3" PointY="7.25" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Producto" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Producto" Width="1.5" PointX="0.75" PointY="11.625" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Tipo_Usuario" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Usuario" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Estado_Pedido" Width="1.5" PointX="8.25" PointY="7.375" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Pedido_Producto" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="COMANDFASTModel.Usuario_Pedido" Width="1.5" PointX="5.25" PointY="2.375" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Estado_Pedido_Estado" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Opiniones_Usuario" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Estado_Pedido_Pedido" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Pedido_Producto_Pedido" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Pedido_Pedido" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Pedido_Producto_Producto" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Producto_Tipo_Producto" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Tipo_Usuario" />
+        <AssociationConnector Association="COMANDFASTModel.FK_Usuario_Pedido_Usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
